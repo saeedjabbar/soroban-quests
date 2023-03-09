@@ -50,7 +50,6 @@ questions during this part of the task, you should *really* check out the
 /// Now, it's your turn! Create your custom `Rectangle` type below. It will be
 /// quite similar to the `Cylinder` example: a `struct` with two `u32` fields.
 #[contracttype]
-#[contracttype]
 pub struct Rectangle {
     width: u32,
     height: u32,
@@ -61,7 +60,8 @@ pub struct Rectangle {
 /// quite similar to the `Car` example: an `enum` with (at least) 2 variants.
 #[contracttype]
 pub enum Animal {
-    // TODO: create the variants here for your `Animal` type
+    Cat,
+    Dog
 }
 
 /// The `User` type will be similar in design to the `Rectangle` type above. It
@@ -69,21 +69,25 @@ pub enum Animal {
 /// different custom type to be nested within the `User` type.
 #[contracttype]
 pub struct User {
-    // TODO: create your fields here for your `User` type
+    name: Bytes,
+    age: u32,
+    pet: Animal,
 }
 
 /// The `RGB` type will be a `struct` and it must be defined using 3 unnamed
 /// `u32` integer values.
 #[contracttype]
 pub struct RGB(
-    // TODO: create your fields here for your `RGB` type
+    u32, // red value
+    u32, // green value
+    u32, // blue value
 );
 
 /// The `Color` type will be a tuple variant `enum` that contains a single
 /// variant with a name of `RGB` and containing an `RGB` value (see above type).
 #[contracttype]
 pub enum Color {
-    // TODO: create the variant here for your `Color` type
+    RGB(RGB),
 }
 
 /// The `Participant` type will be similar in design to the `Animal` type above.
@@ -91,7 +95,8 @@ pub enum Color {
 /// the README.
 #[contracttype]
 pub enum Participant {
-    // TODO: create the variants here for your `Participant` type
+    Account(Address),
+    Contract(BytesN<32>)
 }
 
 /// Our `RoyalCard` type will be created using the `enum` keyword. Here we are
@@ -101,5 +106,7 @@ pub enum Participant {
 // The `repr` attribute is here to specify the memory alignment for this type
 #[repr(u32)]
 pub enum RoyalCard {
-    // TODO: create the fields here for your `RoyalCard` type
+    King = 13,
+    Queen = 12,
+    Jack = 11,
 }
