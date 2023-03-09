@@ -51,8 +51,8 @@ questions during this part of the task, you should *really* check out the
 /// quite similar to the `Cylinder` example: a `struct` with two `u32` fields.
 #[contracttype]
 pub struct Rectangle {
-    width: u32,
-    height: u32,
+   pub width: u32,
+   pub height: u32,
 }
 
 
@@ -69,18 +69,18 @@ pub enum Animal {
 /// different custom type to be nested within the `User` type.
 #[contracttype]
 pub struct User {
-    name: Bytes,
-    age: u32,
-    pet: Animal,
+   pub name: Bytes,
+   pub age: u32,
+   pub pet: Animal,
 }
 
 /// The `RGB` type will be a `struct` and it must be defined using 3 unnamed
 /// `u32` integer values.
 #[contracttype]
 pub struct RGB(
-    u32, // red value
-    u32, // green value
-    u32, // blue value
+    pub u32, // red value
+    pub u32, // green value
+    pub u32, // blue value
 );
 
 /// The `Color` type will be a tuple variant `enum` that contains a single
