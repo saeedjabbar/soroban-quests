@@ -50,9 +50,12 @@ questions during this part of the task, you should *really* check out the
 /// Now, it's your turn! Create your custom `Rectangle` type below. It will be
 /// quite similar to the `Cylinder` example: a `struct` with two `u32` fields.
 #[contracttype]
+#[contracttype]
 pub struct Rectangle {
-    // TODO: create your fields here for your `Rectangle` type
+    width: u32,
+    height: u32,
 }
+
 
 /// Now, it's your turn! Create your custom `Animal` type below. It will be
 /// quite similar to the `Car` example: an `enum` with (at least) 2 variants.
